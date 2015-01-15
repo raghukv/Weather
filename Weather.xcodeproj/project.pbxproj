@@ -66,6 +66,7 @@
 		5DD801231A6760E5002B96DB = {
 			isa = PBXGroup;
 			children = (
+				15346FCC1A676A9F00FD6F3B /* MapKit.framework */,
 				FF716D831A676AD200531F4B /* rainy_weather-wallpaper-1440x1080.jpg */,
 				5DD8012E1A6760E5002B96DB /* Weather */,
 				5DD801471A6760E5002B96DB /* WeatherTests */,
