@@ -22,8 +22,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        println("Hello. This is the new weather app....");
-        
+        var fromLabel = UITextField()
+        fromLabel.placeholder = "From"
+            
     }
 
     override func didReceiveMemoryWarning() {
