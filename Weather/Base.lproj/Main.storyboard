@@ -26,9 +26,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-Um-hkX">
-                                <rect key="frame" x="318" y="441" width="258" height="91"/>
+                                <rect key="frame" x="292" y="509" width="258" height="91"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                <state key="normal" title="Get Started"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="0.30025823464010459" green="0.69782721970822248" blue="0.95692510190000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
