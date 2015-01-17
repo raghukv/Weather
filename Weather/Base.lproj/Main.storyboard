@@ -16,19 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rainy_weather-wallpaper-1440x1080.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-3B-xyG">
-                                <rect key="frame" x="28" y="0.0" width="580" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-3B-xyG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-B5-CME">
-                                <rect key="frame" x="367" y="80" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sd-OS-GRS">
-                                <rect key="frame" x="367" y="118" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ati-xR-J1I">
+                                <rect key="frame" x="16" y="270" width="399" height="85"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="77"/>
+                                <color key="textColor" red="0.023529414087533951" green="0.023529414087533951" blue="0.023529414087533951" alpha="0.48999999999999999" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -38,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rainy_weather-wallpaper-1440x1080.jpg" width="1440" height="1080"/>
+        <image name="Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg" width="1920" height="1200"/>
     </resources>
 </document>

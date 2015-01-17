@@ -15,7 +15,7 @@
 		5DD8013C1A6760E5002B96DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8013B1A6760E5002B96DB /* Images.xcassets */; };
 		5DD8013F1A6760E5002B96DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8013D1A6760E5002B96DB /* LaunchScreen.xib */; };
 		5DD8014B1A6760E5002B96DB /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8014A1A6760E5002B96DB /* WeatherTests.swift */; };
-		FF716D841A676AD200531F4B /* rainy_weather-wallpaper-1440x1080.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF716D831A676AD200531F4B /* rainy_weather-wallpaper-1440x1080.jpg */; };
+		FF60DDE91A6AD3C900B6A111 /* Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FF60DDE81A6AD3C900B6A111 /* Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 		5DD801441A6760E5002B96DB /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD801491A6760E5002B96DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DD8014A1A6760E5002B96DB /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
-		FF716D831A676AD200531F4B /* rainy_weather-wallpaper-1440x1080.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "rainy_weather-wallpaper-1440x1080.jpg"; path = "../../Desktop/rainy_weather-wallpaper-1440x1080.jpg"; sourceTree = "<group>"; };
+		FF60DDE81A6AD3C900B6A111 /* Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg"; path = "../../../Desktop/Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				15346FCC1A676A9F00FD6F3B /* MapKit.framework */,
-				FF716D831A676AD200531F4B /* rainy_weather-wallpaper-1440x1080.jpg */,
 				5DD8012E1A6760E5002B96DB /* Weather */,
 				5DD801471A6760E5002B96DB /* WeatherTests */,
 				5DD8012D1A6760E5002B96DB /* Products */,
@@ -86,6 +85,7 @@
 		5DD8012E1A6760E5002B96DB /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FF60DDE81A6AD3C900B6A111 /* Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg */,
 				5DD801311A6760E5002B96DB /* AppDelegate.swift */,
 				5DD801361A6760E5002B96DB /* ViewController.swift */,
 				5DD801381A6760E5002B96DB /* Main.storyboard */,
@@ -209,7 +209,7 @@
 			files = (
 				5DD8013A1A6760E5002B96DB /* Main.storyboard in Resources */,
 				5DD8013F1A6760E5002B96DB /* LaunchScreen.xib in Resources */,
-				FF716D841A676AD200531F4B /* rainy_weather-wallpaper-1440x1080.jpg in Resources */,
+				FF60DDE91A6AD3C900B6A111 /* Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg in Resources */,
 				5DD8013C1A6760E5002B96DB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
