@@ -16,11 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-3B-xyG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ati-xR-J1I">
-                                <rect key="frame" x="16" y="270" width="399" height="85"/>
+                                <rect key="frame" x="8" y="269" width="399" height="85"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="77"/>
                                 <color key="textColor" red="0.023529414087533951" green="0.023529414087533951" blue="0.023529414087533951" alpha="0.48999999999999999" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -31,10 +28,25 @@
                                 <state key="normal" title="Get Started">
                                     <color key="titleColor" red="0.30025823464010459" green="0.69782721970822248" blue="0.95692510190000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="getStartedButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CYw-bF-KKj"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please get started by clicking on the Get Started button" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1T-wk-o9s">
+                                <rect key="frame" x="29" y="40" width="415" height="68"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" red="0.30025823460000001" green="0.69782721969999995" blue="0.95692510190000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="0Uf-3B-xyG">
+                                <rect key="frame" x="0.0" y="-8" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="getStartedLabel" destination="u1T-wk-o9s" id="61x-Wm-d2L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
