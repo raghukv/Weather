@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EVq-wE-ytd">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dark Mac Apple Wallpapers Driving in Bad Weather-697994" translatesAutoresizingMaskIntoConstraints="NO" id="EVq-wE-ytd">
                     <rect key="frame" x="-8" y="0.0" width="497" height="480"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8e-de-T9B">
@@ -27,6 +27,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Dark Mac Apple Wallpapers Driving in Bad Weather-697994.jpg" width="1280" height="800"/>
+        <image name="Dark Mac Apple Wallpapers Driving in Bad Weather-697994" width="1280" height="800"/>
     </resources>
 </document>
