@@ -9,21 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var getStartedLabel: UILabel!
     
-    @IBAction func getStartedButtonPress(sender: AnyObject) {
-        
-        
-        getStartedLabel.text = "Thanks for Getting Started !!!!"
-        
-    }
-   
 
+    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var toButton: UILabel!
+    @IBOutlet weak var fromButton: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        var fromLabel = UITextField()
-        fromLabel.placeholder = "From"
+
+            
             
     }
 

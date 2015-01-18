@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		15346FCD1A676A9F00FD6F3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15346FCC1A676A9F00FD6F3B /* MapKit.framework */; };
+		5DC85E7F1A6C583D00E59697 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC85E7E1A6C583D00E59697 /* Images.xcassets */; };
 		5DD801321A6760E5002B96DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD801311A6760E5002B96DB /* AppDelegate.swift */; };
 		5DD801351A6760E5002B96DB /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DD801331A6760E5002B96DB /* Weather.xcdatamodeld */; };
 		5DD801371A6760E5002B96DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD801361A6760E5002B96DB /* ViewController.swift */; };
 		5DD8013A1A6760E5002B96DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD801381A6760E5002B96DB /* Main.storyboard */; };
-		5DD8013C1A6760E5002B96DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8013B1A6760E5002B96DB /* Images.xcassets */; };
 		5DD8013F1A6760E5002B96DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8013D1A6760E5002B96DB /* LaunchScreen.xib */; };
 		5DD8014B1A6760E5002B96DB /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8014A1A6760E5002B96DB /* WeatherTests.swift */; };
 /* End PBXBuildFile section */
@@ -29,13 +29,13 @@
 
 /* Begin PBXFileReference section */
 		15346FCC1A676A9F00FD6F3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5DC85E7E1A6C583D00E59697 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5DD8012C1A6760E5002B96DB /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD801301A6760E5002B96DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DD801311A6760E5002B96DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DD801341A6760E5002B96DB /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
 		5DD801361A6760E5002B96DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5DD801391A6760E5002B96DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5DD8013B1A6760E5002B96DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5DD8013E1A6760E5002B96DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5DD801441A6760E5002B96DB /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD801491A6760E5002B96DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			children = (
 				5DD801311A6760E5002B96DB /* AppDelegate.swift */,
 				5DD801361A6760E5002B96DB /* ViewController.swift */,
+				5DC85E7E1A6C583D00E59697 /* Images.xcassets */,
 				5DD801381A6760E5002B96DB /* Main.storyboard */,
-				5DD8013B1A6760E5002B96DB /* Images.xcassets */,
 				5DD8013D1A6760E5002B96DB /* LaunchScreen.xib */,
 				5DD801331A6760E5002B96DB /* Weather.xcdatamodeld */,
 				5DD8012F1A6760E5002B96DB /* Supporting Files */,
@@ -204,9 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC85E7F1A6C583D00E59697 /* Images.xcassets in Resources */,
 				5DD8013A1A6760E5002B96DB /* Main.storyboard in Resources */,
 				5DD8013F1A6760E5002B96DB /* LaunchScreen.xib in Resources */,
-				5DD8013C1A6760E5002B96DB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
