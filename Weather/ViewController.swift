@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         // Dispose of any resources
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         var touch = touches.anyObject() as UITouch
         if( CGRectContainsPoint(self.fromButton.frame, touch.locationInView(self.view))){
             println("got it");

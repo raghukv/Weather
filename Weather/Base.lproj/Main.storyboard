@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="R4J-Ul-yqG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -12,6 +12,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dark Mac Apple Wallpapers Driving in Bad Weather-697994" id="njs-1o-Yfk">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <visualEffectView contentMode="scaleToFill" id="39W-3c-GnI">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AS6-Ph-PqH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Htb-rq-VuD">
                                 <rect key="frame" x="16" y="475" width="288" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -48,15 +61,14 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EbV-wt-vcT">
-                                <rect key="frame" x="-644" y="20" width="1608" height="209"/>
+                                <rect key="frame" x="-644" y="20" width="1608" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">WeatherBy displays weather
-information along the route
- of your transit. Select the point
- on your route and it will display
- weather at the ETA of that point.</string>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Where
+are
+you
+going?</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="41"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -80,48 +92,66 @@ information along the route
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addressPickerTitle" id="QAt-52-5ti">
-                                <rect key="frame" x="0.0" y="20" width="320" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="tah-b2-Xsc">
-                                <rect key="frame" x="0.0" y="101" width="320" height="467"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="tah-b2-Xsc">
+                                <rect key="frame" x="0.0" y="110" width="320" height="458"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter address or pick a point from the Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xVJ-b3-oFK">
-                                <rect key="frame" x="-4" y="20" width="329" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <color key="textColor" red="0.6705882352941176" green="0.90588235294117647" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <searchBar contentMode="redraw" id="pST-62-2oA">
-                                <rect key="frame" x="0.0" y="57" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" placeholder="From" translucent="NO" backgroundImage="searchbarBackgroun" id="79l-o4-ZI1">
+                                <rect key="frame" x="0.0" y="22" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="R4J-Ul-yqG" id="MNV-hz-aKM"/>
+                                </connections>
                             </searchBar>
+                            <searchBar contentMode="redraw" placeholder="To" backgroundImage="searchbarBackgroun" id="Z0x-RZ-hpM">
+                                <rect key="frame" x="0.0" y="66" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="R4J-Ul-yqG" id="SdA-7p-gR4"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LDv-nZ-8sO">
+                                <rect key="frame" x="253" y="22" width="67" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.6705882353" green="0.90588235289999997" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="pDz-zw-QWP" id="nPE-O8-KXp"/>
+                        <outlet property="mapView" destination="tah-b2-Xsc" id="6uU-ta-MSY"/>
+                        <outlet property="searchDisplayController" destination="Fhu-Az-QL5" id="hmg-g5-PUZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESZ-eq-RwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Fc2-nl-GUF">
+                <searchDisplayController id="wH0-lK-5J6">
                     <connections>
-                        <outlet property="delegate" destination="R4J-Ul-yqG" id="rhx-KJ-Fy5"/>
-                        <outlet property="searchContentsController" destination="R4J-Ul-yqG" id="QRa-AZ-y5G"/>
-                        <outlet property="searchResultsDataSource" destination="R4J-Ul-yqG" id="4IC-1U-jlr"/>
-                        <outlet property="searchResultsDelegate" destination="R4J-Ul-yqG" id="cUA-Be-nSC"/>
+                        <outlet property="delegate" destination="R4J-Ul-yqG" id="nlY-JL-7AY"/>
+                        <outlet property="searchBar" destination="79l-o4-ZI1" id="qaQ-BP-ylX"/>
+                        <outlet property="searchContentsController" destination="R4J-Ul-yqG" id="MSb-ps-A5u"/>
+                        <outlet property="searchResultsDataSource" destination="R4J-Ul-yqG" id="ML5-3j-yU9"/>
+                        <outlet property="searchResultsDelegate" destination="R4J-Ul-yqG" id="7bn-1B-w0w"/>
                     </connections>
                 </searchDisplayController>
-                <searchDisplayController id="pDz-zw-QWP">
+                <searchDisplayController id="Fhu-Az-QL5">
                     <connections>
-                        <outlet property="delegate" destination="R4J-Ul-yqG" id="XSd-9S-zM6"/>
-                        <outlet property="searchContentsController" destination="R4J-Ul-yqG" id="9wO-Iy-zZ7"/>
-                        <outlet property="searchResultsDataSource" destination="R4J-Ul-yqG" id="3W3-32-Eaa"/>
-                        <outlet property="searchResultsDelegate" destination="R4J-Ul-yqG" id="YjT-7k-4jZ"/>
+                        <outlet property="delegate" destination="R4J-Ul-yqG" id="k76-CD-Ps9"/>
+                        <outlet property="searchBar" destination="Z0x-RZ-hpM" id="ynE-Tn-gtL"/>
+                        <outlet property="searchContentsController" destination="R4J-Ul-yqG" id="iHz-O9-qb4"/>
+                        <outlet property="searchResultsDataSource" destination="R4J-Ul-yqG" id="D6Y-O9-G85"/>
+                        <outlet property="searchResultsDelegate" destination="R4J-Ul-yqG" id="WsS-5i-Y3n"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -129,9 +159,10 @@ information along the route
         </scene>
     </scenes>
     <resources>
+        <image name="Dark Mac Apple Wallpapers Driving in Bad Weather-697994" width="1280" height="800"/>
         <image name="Go Button" width="640" height="142"/>
         <image name="Text Field" width="640" height="640"/>
-        <image name="addressPickerTitle" width="640" height="142"/>
+        <image name="searchbarBackgroun" width="308" height="39"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
