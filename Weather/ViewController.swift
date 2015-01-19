@@ -18,13 +18,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            
-            
+
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var touch = touches.anyObject() as UITouch
+        if( CGRectContainsPoint(self.fromButton.frame, touch.locationInView(self.view))){
+            println("got it");
+            
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+            let address : UIViewController = storyboard.instantiateViewControllerWithIdentifier("AddressPickViewController") as UIViewController
+        
+            self.presentViewController(address, animated: true, completion: nil)
+
+            
+        }
+        
     }
 
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15346FCD1A676A9F00FD6F3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15346FCC1A676A9F00FD6F3B /* MapKit.framework */; };
 		5DC85E7F1A6C583D00E59697 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC85E7E1A6C583D00E59697 /* Images.xcassets */; };
+		5DC85E811A6C706E00E59697 /* AddressPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC85E801A6C706E00E59697 /* AddressPickViewController.swift */; };
 		5DD801321A6760E5002B96DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD801311A6760E5002B96DB /* AppDelegate.swift */; };
 		5DD801351A6760E5002B96DB /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DD801331A6760E5002B96DB /* Weather.xcdatamodeld */; };
 		5DD801371A6760E5002B96DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD801361A6760E5002B96DB /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		15346FCC1A676A9F00FD6F3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5DC85E7E1A6C583D00E59697 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5DC85E801A6C706E00E59697 /* AddressPickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressPickViewController.swift; sourceTree = "<group>"; };
 		5DD8012C1A6760E5002B96DB /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD801301A6760E5002B96DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DD801311A6760E5002B96DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				5DD801361A6760E5002B96DB /* ViewController.swift */,
 				5DC85E7E1A6C583D00E59697 /* Images.xcassets */,
 				5DD801381A6760E5002B96DB /* Main.storyboard */,
+				5DC85E801A6C706E00E59697 /* AddressPickViewController.swift */,
 				5DD8013D1A6760E5002B96DB /* LaunchScreen.xib */,
 				5DD801331A6760E5002B96DB /* Weather.xcdatamodeld */,
 				5DD8012F1A6760E5002B96DB /* Supporting Files */,
@@ -226,6 +229,7 @@
 			files = (
 				5DD801371A6760E5002B96DB /* ViewController.swift in Sources */,
 				5DD801351A6760E5002B96DB /* Weather.xcdatamodeld in Sources */,
+				5DC85E811A6C706E00E59697 /* AddressPickViewController.swift in Sources */,
 				5DD801321A6760E5002B96DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

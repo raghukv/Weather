@@ -21,11 +21,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Text Field" id="AcZ-6A-Lo2" userLabel="Text Field From">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Text Field" id="AcZ-6A-Lo2" userLabel="Text Field From">
                                 <rect key="frame" x="16" y="295" width="288" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tj1-Du-v9M">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tj1-Du-v9M">
                                 <rect key="frame" x="16" y="295" width="288" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EbV-wt-vcT">
-                                <rect key="frame" x="-644" y="20" width="1608" height="267"/>
+                                <rect key="frame" x="-644" y="20" width="1608" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <string key="text">WeatherBy displays weather
 information along the route
@@ -72,10 +72,66 @@ information along the route
             </objects>
             <point key="canvasLocation" x="-74" y="-123"/>
         </scene>
+        <!--AddressPickViewController-->
+        <scene sceneID="Uge-4n-mnN">
+            <objects>
+                <viewController storyboardIdentifier="AddressPickViewController" title="AddressPickViewController" id="R4J-Ul-yqG" customClass="AddressPickViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jac-l1-6sj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addressPickerTitle" id="QAt-52-5ti">
+                                <rect key="frame" x="0.0" y="20" width="320" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="tah-b2-Xsc">
+                                <rect key="frame" x="0.0" y="101" width="320" height="467"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter address or pick a point from the Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xVJ-b3-oFK">
+                                <rect key="frame" x="-4" y="20" width="329" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.6705882352941176" green="0.90588235294117647" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" id="pST-62-2oA">
+                                <rect key="frame" x="0.0" y="57" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="pDz-zw-QWP" id="nPE-O8-KXp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESZ-eq-RwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Fc2-nl-GUF">
+                    <connections>
+                        <outlet property="delegate" destination="R4J-Ul-yqG" id="rhx-KJ-Fy5"/>
+                        <outlet property="searchContentsController" destination="R4J-Ul-yqG" id="QRa-AZ-y5G"/>
+                        <outlet property="searchResultsDataSource" destination="R4J-Ul-yqG" id="4IC-1U-jlr"/>
+                        <outlet property="searchResultsDelegate" destination="R4J-Ul-yqG" id="cUA-Be-nSC"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="pDz-zw-QWP">
+                    <connections>
+                        <outlet property="delegate" destination="R4J-Ul-yqG" id="XSd-9S-zM6"/>
+                        <outlet property="searchContentsController" destination="R4J-Ul-yqG" id="9wO-Iy-zZ7"/>
+                        <outlet property="searchResultsDataSource" destination="R4J-Ul-yqG" id="3W3-32-Eaa"/>
+                        <outlet property="searchResultsDelegate" destination="R4J-Ul-yqG" id="YjT-7k-4jZ"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="320" y="-123"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Go Button" width="640" height="142"/>
         <image name="Text Field" width="640" height="640"/>
+        <image name="addressPickerTitle" width="640" height="142"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
