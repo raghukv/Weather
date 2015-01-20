@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="R4J-Ul-yqG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="R4J-Ul-yqG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -94,10 +94,10 @@ going?</string>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="tah-b2-Xsc">
                                 <rect key="frame" x="0.0" y="110" width="320" height="458"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <searchBar contentMode="redraw" placeholder="From" translucent="NO" backgroundImage="searchbarBackgroun" id="79l-o4-ZI1">
-                                <rect key="frame" x="0.0" y="22" width="253" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="243" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -110,7 +110,7 @@ going?</string>
                                 </connections>
                             </searchBar>
                             <searchBar contentMode="redraw" placeholder="To" backgroundImage="searchbarBackgroun" id="Z0x-RZ-hpM">
-                                <rect key="frame" x="0.0" y="66" width="253" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="243" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -118,12 +118,11 @@ going?</string>
                                     <outlet property="delegate" destination="R4J-Ul-yqG" id="SdA-7p-gR4"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LDv-nZ-8sO">
-                                <rect key="frame" x="253" y="22" width="67" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Go">
-                                    <color key="titleColor" red="0.6705882353" green="0.90588235289999997" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LDv-nZ-8sO">
+                                <rect key="frame" x="253" y="30" width="51" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go" backgroundImage="goButton">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -162,6 +161,7 @@ going?</string>
         <image name="Dark Mac Apple Wallpapers Driving in Bad Weather-697994" width="1280" height="800"/>
         <image name="Go Button" width="640" height="142"/>
         <image name="Text Field" width="640" height="640"/>
+        <image name="goButton" width="148" height="148"/>
         <image name="searchbarBackgroun" width="308" height="39"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
