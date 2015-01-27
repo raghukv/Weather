@@ -143,14 +143,36 @@ going?</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JHC-wQ-0NI">
+                                <rect key="frame" x="16" y="538" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <state key="normal" title="weatherCall">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="weatherCall:" destination="R4J-Ul-yqG" eventType="touchUpInside" id="7rJ-Hz-RHH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="07d-2W-tXK">
+                                <rect key="frame" x="230" y="538" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <state key="normal" title="currentLoc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveToCurrentLocation:" destination="R4J-Ul-yqG" eventType="touchUpInside" id="EGV-qE-ZBq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="currentLocButton" destination="07d-2W-tXK" id="hbe-ZB-WUC"/>
                         <outlet property="fromBar" destination="4Yx-hX-oLX" id="VdG-Vo-lfU"/>
                         <outlet property="mapView" destination="tah-b2-Xsc" id="0pJ-ZA-jhO"/>
                         <outlet property="suggestionView" destination="2CA-gF-JjS" id="Wqg-yg-6EI"/>
                         <outlet property="toBar" destination="2AK-4B-Pvx" id="XXp-eT-P6o"/>
+                        <outlet property="weatherCall" destination="JHC-wQ-0NI" id="h8W-t0-tDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESZ-eq-RwB" userLabel="First Responder" sceneMemberID="firstResponder"/>

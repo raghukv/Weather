@@ -15,6 +15,8 @@ import AddressBookUI
 class AddressPickViewController : UIViewController, UITableViewDelegate ,UITableViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     
+    @IBOutlet weak var currentLocButton: UIButton!
+    @IBOutlet weak var weatherCall: UIButton!
     // Dropdown table that contains suggestions
     @IBOutlet weak var suggestionView: UITableView!
     
@@ -75,6 +77,13 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         
     }
     
+    @IBAction func weatherCall(sender: AnyObject) {
+    
+    }
+    
+    @IBAction func moveToCurrentLocation(sender: AnyObject) {
+        zoomToLocation()
+    }
     
     /**
         MAP VIEW FUNCTIONS
@@ -88,6 +97,7 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         mapView.setRegion(region, animated: true)
     }
     
+
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
     {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler:
