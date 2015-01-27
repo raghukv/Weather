@@ -64,7 +64,7 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         self.locationMananger.requestWhenInUseAuthorization()
         self.locationMananger.startUpdatingLocation()
         
-        zoomToLocation()
+        
         
         // hiding the dropdown view by default. shown when editing fields
         suggestionView.hidden = true
@@ -75,6 +75,10 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         suggestionView.dataSource = self
         suggestionView.delegate = self
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        zoomToLocation()
     }
     
     @IBAction func weatherCall(sender: AnyObject) {
