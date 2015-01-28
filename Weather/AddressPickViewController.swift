@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import AddressBookUI
 
-class AddressPickViewController : UIViewController, UITableViewDelegate ,UITableViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
+class AddressPickViewController : UIViewController, UITableViewDelegate ,UITableViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
     @IBOutlet weak var currentLocButton: UIButton!
@@ -22,6 +22,9 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
     
     // Object for holding the Map
     @IBOutlet weak var mapView: MKMapView!
+    
+    //Object for holding the currentLocation
+    var currentLocation = MKMapItem()
     
     // Objects for holding both the search bars respectively
     @IBOutlet weak var fromBar: UITextField!
@@ -44,10 +47,14 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
     
     // This is the array in which suggestions are stored. 
     // This is the source for Dropdown table view
-    var suggestionList : NSArray!
+    var suggestionList : NSMutableArray!
     
     // 1 for FROM and 2 for TO
     var addressBeingSelected = 1
+    
+    var fromMapItem: MKMapItem!
+    
+    var toMapItem: MKMapItem!
 
     /**
         Set up everything here
@@ -56,7 +63,7 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         super.viewDidLoad()
         
         // initializing the array
-        suggestionList = NSArray()
+        suggestionList = NSMutableArray()
         
         // setting up location
         self.locationMananger.delegate = self
@@ -74,6 +81,7 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         self.suggestionView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         suggestionView.dataSource = self
         suggestionView.delegate = self
+        self.mapView.delegate = self
         
     }
     
@@ -94,12 +102,56 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
     */
     func zoomToLocation() -> Void{
         let userLocation = locationMananger.location
-        
+    
         let region = MKCoordinateRegionMakeWithDistance(
             userLocation.coordinate, 20000, 20000)
         
         mapView.setRegion(region, animated: true)
     }
+    
+    @IBAction func getDirections(sender: AnyObject) {
+        var directionRequest:MKDirectionsRequest = MKDirectionsRequest()
+        
+        directionRequest.setSource(self.fromMapItem)
+        directionRequest.setDestination(self.toMapItem)
+        directionRequest.transportType = MKDirectionsTransportType.Automobile
+        directionRequest.requestsAlternateRoutes = true
+        
+        var directions:MKDirections = MKDirections(request: directionRequest)
+        directions.calculateDirectionsWithCompletionHandler({
+            (response: MKDirectionsResponse!, error: NSError?) in
+            if error != nil{
+                println("Error")
+                println(error?.description)
+            }
+            if response != nil{
+                println(response.description)
+                var routeDetails: MKRoute = response.routes.last as MKRoute
+                self.mapView.addOverlay(routeDetails.polyline)
+                
+                
+            }
+            else{
+                println("No response")
+            }
+
+        })
+        
+        
+    }
+    
+    func mapView(mapView: MKMapView!, viewForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if(overlay.isKindOfClass(MKPolyline)){
+            var polyLine = MKPolylineRenderer(overlay: overlay)
+            polyLine.strokeColor = UIColor.blueColor().colorWithAlphaComponent(0.8)
+            polyLine.lineWidth = 5
+            return polyLine
+        }
+        return nil
+    }
+    
+    
+    
     
 
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
@@ -111,6 +163,15 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
                 return
             }
        })
+        
+        var latitude = self.locationMananger.location.coordinate.latitude
+        var longitude = self.locationMananger.location.coordinate.longitude
+        var placeMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(latitude, longitude), addressDictionary: nil)
+        
+        var currentLocItem = MKMapItem(placemark: placeMark)
+        currentLocItem.name = "Current Location"
+        self.currentLocation = currentLocItem
+
     }
     
     func displayLocationInfo(placemark: CLPlacemark) {
@@ -141,11 +202,9 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
             (response:MKLocalSearchResponse!, error:NSError!) in
             if !(error != nil) {
                 self.response = response
-                self.suggestionList = self.response.mapItems
+                self.suggestionList.removeAllObjects()
+                self.suggestionList.addObjectsFromArray(self.response.mapItems)
                 self.suggestionView.reloadData()
-            } else {
-                println("results not found for " + searchString
-                )
             }
         }
     }
@@ -171,8 +230,8 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
     }
     
     func reloadSuggestionView() -> Void {
-        self.suggestionList = nil
-        self.suggestionList = NSArray()
+        self.suggestionList.removeAllObjects()
+        suggestionList.addObject(self.currentLocation)
         self.suggestionView.reloadData()
     }
 
@@ -216,9 +275,18 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         
         var item : MKMapItem = self.suggestionList[indexPath.row] as MKMapItem;
         
+        if(item.name? == "Current Location"){
+            cell.textLabel?.text = item.name
+            return cell
+        }
+        
         var address : NSString = ABCreateStringWithAddressDictionary(item.placemark.addressDictionary, true)
         
         let formattedAddress = address.stringByReplacingOccurrencesOfString("\n", withString: ", ", options: nil, range: NSMakeRange(0, address.length))
+        
+        if(item.placemark.location == locationMananger.location){
+            cell.textLabel?.text = "Current location";
+        }
         
         cell.textLabel?.text = formattedAddress
         
@@ -229,25 +297,43 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         
         var selectedItem: MKMapItem = self.suggestionList[indexPath.row] as MKMapItem;
         
-        var address : NSString = ABCreateStringWithAddressDictionary(selectedItem.placemark.addressDictionary, true)
-        
-        let formattedAddress = address.stringByReplacingOccurrencesOfString("\n", withString: ", ", options: nil, range: NSMakeRange(0, address.length))
-        
-        
-        println(formattedAddress);
-        
-        if(addressBeingSelected == 1){
-            fromBar.text = formattedAddress
-            fromBar.resignFirstResponder()
-        }else if (addressBeingSelected == 2){
-            toBar.text = formattedAddress
-            toBar.resignFirstResponder()
+        if(selectedItem.name? == "Current Location"){
+            if(addressBeingSelected == 1){
+                fromBar.text = selectedItem.name?
+                fromBar.resignFirstResponder()
+                fromMapItem = selectedItem
+            }else if (addressBeingSelected == 2){
+                toBar.text = selectedItem.name?
+                toBar.resignFirstResponder()
+                toMapItem = selectedItem
+            }
+        }else{
+            
+            var address : NSString = ABCreateStringWithAddressDictionary(selectedItem.placemark.addressDictionary, true)
+            
+            let formattedAddress = address.stringByReplacingOccurrencesOfString("\n", withString: ", ", options: nil, range: NSMakeRange(0, address.length))
+            
+            
+            println(formattedAddress);
+            
+            if(addressBeingSelected == 1){
+                fromBar.text = formattedAddress
+                fromBar.resignFirstResponder()
+                fromMapItem = selectedItem
+            }else if (addressBeingSelected == 2){
+                toBar.text = formattedAddress
+                toBar.resignFirstResponder()
+                toMapItem = selectedItem
+            }
         }
         
         hideSuggestionView()
         reloadSuggestionView()
-        
     }
     
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        reloadSuggestionView()
+        return true;
+    }
 
 }

@@ -142,6 +142,9 @@ going?</string>
                                 <state key="normal" title="Route">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getDirections:" destination="R4J-Ul-yqG" eventType="touchUpInside" id="XzP-jK-tNX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JHC-wQ-0NI">
                                 <rect key="frame" x="16" y="538" width="81" height="30"/>
@@ -154,7 +157,7 @@ going?</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="07d-2W-tXK">
-                                <rect key="frame" x="230" y="538" width="74" height="30"/>
+                                <rect key="frame" x="229.99999981161992" y="538" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" title="currentLoc">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
