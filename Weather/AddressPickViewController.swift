@@ -71,6 +71,12 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         self.locationMananger.requestWhenInUseAuthorization()
         self.locationMananger.startUpdatingLocation()
         
+        var longPress : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        longPress.minimumPressDuration = 1.0
+        self.mapView.addGestureRecognizer(longPress)
+        
+
+        
         
         
         // hiding the dropdown view by default. shown when editing fields
@@ -136,6 +142,24 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
             }
 
         })
+        
+        
+    }
+        
+    func handleLongPress(gesture : UIGestureRecognizer){
+        if(gesture.state != UIGestureRecognizerState.Began){
+            return;
+        }
+        
+        var point : CGPoint = gesture.locationInView(self.mapView)
+        
+        var coordinate : CLLocationCoordinate2D = self.mapView.convertPoint(point, toCoordinateFromView: self.mapView)
+        
+        var annot = MKPointAnnotation()
+        
+        annot.coordinate = coordinate
+        self.mapView.addAnnotation(annot)
+        
         
         
     }
