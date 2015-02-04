@@ -155,14 +155,49 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         
         var coordinate : CLLocationCoordinate2D = self.mapView.convertPoint(point, toCoordinateFromView: self.mapView)
         
+        makeWeatherCall(coordinate)
+        
         var annot = MKPointAnnotation()
         
         annot.coordinate = coordinate
         self.mapView.addAnnotation(annot)
-        
-        
-        
     }
+    
+    func makeWeatherCall(coordinate : CLLocationCoordinate2D){
+        let latitudeText = String(format: "%f", coordinate.latitude) + ","
+        let longitudeText = String(format: "%f", coordinate.longitude) + ","
+        let currentDate = NSDate()
+        let timeStamp : NSTimeInterval = currentDate.timeIntervalSince1970
+        let roundedTime : NSInteger = NSInteger(timeStamp)
+        println(roundedTime)
+
+        var baseURL : NSString = "https://api.forecast.io/forecast/"
+        baseURL = baseURL + "f01d550c9b8c60858405e41b7c1f47dd/"
+        
+        baseURL = baseURL + latitudeText
+        baseURL = baseURL + longitudeText
+        baseURL = baseURL + String(roundedTime)
+
+        
+        println(baseURL)
+        
+        
+        var request : NSMutableURLRequest = NSMutableURLRequest()
+        request.URL = NSURL(string: baseURL)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
+            let jsonResult: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers, error: error) as? NSDictionary
+            
+            if (jsonResult != nil) {
+                println(jsonResult)
+            } else {
+                // couldn't load JSON, look at error
+            }
+        })
+    }
+    
     
     func mapView(mapView: MKMapView!, viewForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if(overlay.isKindOfClass(MKPolyline)){
@@ -174,9 +209,17 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         return nil
     }
     
+    func mapView(mapView: MKMapView!, didAddAnnotationViews views: [AnyObject]!) {
+        
+//        var annot = views[0];
+//        println("did add annotation");
+//        println(annot)
+    }
     
-    
-    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+//        println("view for annotation");
+        return nil
+    }
 
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
     {
@@ -233,9 +276,11 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         }
     }
     
-    /**
-        TEXT FIELD FUNCTIONS
-    */
+    
+    
+    
+    //************************** TEXT FIELD FUNCTIONS *****************************************
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         
         if(textField.tag == 1){
@@ -274,6 +319,17 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         textField.resignFirstResponder()
         return true
     }
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        reloadSuggestionView()
+        return true;
+    }
+    
+    //*******************************  END TEXT FIELD  **********************************
+    
+    
+    
+    //******************************* BEGIN TABLE VIEW FUNCTIONS  ***********************
     
     func showSuggestionView() -> Void {
         suggestionView.hidden = false
@@ -355,9 +411,8 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         reloadSuggestionView()
     }
     
-    func textFieldShouldClear(textField: UITextField) -> Bool {
-        reloadSuggestionView()
-        return true;
-    }
+    //*****************************  END TABLE VIEW FUNCTIONS  **************************
+    
+
 
 }
