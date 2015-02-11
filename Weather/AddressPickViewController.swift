@@ -49,6 +49,8 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
     // This is the source for Dropdown table view
     var suggestionList : NSMutableArray!
     
+    var routeList: NSMutableArray!
+    
     // 1 for FROM and 2 for TO
     var addressBeingSelected = 1
     
@@ -65,6 +67,8 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         // initializing the array
         suggestionList = NSMutableArray()
         
+        routeList = NSMutableArray()
+        
         // setting up location
         self.locationMananger.delegate = self
         self.locationMananger.desiredAccuracy = kCLLocationAccuracyBest
@@ -74,6 +78,10 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         var longPress : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
         longPress.minimumPressDuration = 1.0
         self.mapView.addGestureRecognizer(longPress)
+        
+        var touch: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleRouteTouch:")
+        touch.numberOfTapsRequired = 1;
+        self.mapView.addGestureRecognizer(touch)
         
 
         
@@ -116,6 +124,9 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
     }
     
     @IBAction func getDirections(sender: AnyObject) {
+        
+        self.mapView.removeOverlays(routeList)
+        routeList.removeAllObjects()
         var directionRequest:MKDirectionsRequest = MKDirectionsRequest()
         
         directionRequest.setSource(self.fromMapItem)
@@ -133,9 +144,9 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
             if response != nil{
                 println(response.description)
                 var routeDetails: MKRoute = response.routes.last as MKRoute
+
                 self.mapView.addOverlay(routeDetails.polyline)
-                
-                
+                self.routeList.addObject(routeDetails.polyline)
             }
             else{
                 println("No response")
@@ -163,6 +174,46 @@ class AddressPickViewController : UIViewController, UITableViewDelegate ,UITable
         self.mapView.addAnnotation(annot)
     }
     
+    func handleRouteTouch(gesture: UITapGestureRecognizer){
+        
+        if (gesture.state == UIGestureRecognizerState.Ended)
+        {
+            // convert the touch point to a CLLocationCoordinate & geocode
+            var touchPoint = gesture.locationInView(self.mapView)
+            
+            var touchedRoute: MKPolylineView? = self.polyLineTapped(touchPoint)
+            
+            if (touchedRoute != nil)
+            {
+                println(touchedRoute?.description)
+            }else{
+                println("no route to tap");
+            }
+        }
+    }
+    
+    
+    func polyLineTapped (point: CGPoint) -> MKPolylineView?
+    {
+        // Check if the overlay got tapped
+        for polyView in routeList
+        {
+            println("routes exist")
+            var frameInMap : CGRect? = polyView.superview??.convertRect(polyView.frame, fromCoordinateSpace: mapView)
+
+            // Check if the touch is within the view bounds
+            if(frameInMap != nil){
+                if (CGRectContainsPoint(frameInMap!, point)){
+                    return polyView as? MKPolylineView;
+                }
+            }
+            println("frame was nil")
+
+        }
+                    return nil;
+    }
+    
+
     func makeWeatherCall(coordinate : CLLocationCoordinate2D){
         let latitudeText = String(format: "%f", coordinate.latitude) + ","
         let longitudeText = String(format: "%f", coordinate.longitude) + ","
